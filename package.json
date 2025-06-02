@@ -1,0 +1,29 @@
+{
+  "name": "3semestre_trbalhoapi",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mauricio-TW/3Semestre_TrbalhoAPI.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mauricio-TW/3Semestre_TrbalhoAPI/issues"
+  },
+  "homepage": "https://github.com/Mauricio-TW/3Semestre_TrbalhoAPI#readme",
+  "description": "",
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "supertest": "^7.1.1"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2"
+  }
+}
