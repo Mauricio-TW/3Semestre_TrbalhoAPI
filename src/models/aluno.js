@@ -22,7 +22,7 @@ function adicionarAluno(aluno) {
 function atualizarAluno(id, dadosAtualizados) {
   const index = alunos.findIndex(aluno => aluno.id === id);
   if (index !== -1) {
-    alunos[index] = { ...alunos[index], ...dadosAtualizados };
+    alunos[index] = { ...alunos[index], ...dadosAtualizados }; // Atualiza os dados mantendo os antigos que não foram modificados
     return alunos[index];
   }
   return null;
@@ -32,7 +32,7 @@ function atualizarAluno(id, dadosAtualizados) {
 function removerAluno(id) {
   const index = alunos.findIndex(aluno => aluno.id === id);
   if (index !== -1) {
-    const removido = alunos.splice(index, 1);
+    const removido = alunos.splice(index, 1); // Remove o aluno usando splice e retorna o elemento removido
     return removido[0];
   }
   return null;

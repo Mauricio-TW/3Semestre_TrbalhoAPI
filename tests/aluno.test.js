@@ -1,5 +1,5 @@
 const request = require('supertest');
-const app = require('../src/app');
+const app = require('../src/app.test');
 
 describe('Testes da API Alunos', () => {
   let alunoId;
@@ -20,7 +20,7 @@ describe('Testes da API Alunos', () => {
     expect(response.body).toHaveProperty('id');
     expect(response.body.nome).toBe(novoAluno.nome);
 
-    alunoId = response.body.id; 
+    alunoId = response.body.id;
   });
 
   it('GET /api/alunos/:id deve retornar aluno criado', async () => {

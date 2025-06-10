@@ -1,0 +1,63 @@
+Iniciar servidor
+PS C:\Users\Administrador\Documents\GitHub\3Semestre_TrbalhoAPI> cd src
+ node app.js
+
+GET
+http://localhost:3000/api/cursos
+http://localhost:3000/api/alunos
+http://localhost:3000/api/matriculas
+
+POST
+http://localhost:3000/api/cursos
+Body:
+{
+  "nome": "Introdução à Programação",
+  "descricao": "Curso básico para iniciantes em programação",
+  "duracao": "3 meses",
+  "valor": 1500.00
+}
+http://localhost:3000/api/alunos
+Body:
+{
+  "nome": "João Silva",
+  "email": "joao@email.com"
+}
+http://localhost:3000/api/matriculas
+Body:
+{
+  "alunoId": 1,
+  "cursoId": 1
+}
+
+PUT
+http://localhost:3000/api/cursos/1
+Body:
+{
+  "nome": "Matemática Avançada",
+  "descricao": "Atualizado"
+}
+http://localhost:3000/api/alunos/1
+Body:
+{
+  "nome": "Nome Atualizado",
+  "email": "email@atualizado.com"
+}
+http://localhost:3000/api/matriculas/1
+Body:
+{
+  "alunoId": 1,
+  "cursoId": 1
+}
+
+DELETE
+http://localhost:3000/api/cursos/1
+Body:
+{ "message": "Curso removido" }
+
+http://localhost:3000/api/alunos/1
+Body:
+{ "message": "Aluno removido" }
+
+http://localhost:3000/api/matriculas/1
+Body:
+{ "message": "Matrícula removida" }

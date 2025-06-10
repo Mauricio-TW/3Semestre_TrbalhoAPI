@@ -1,26 +1,26 @@
 let matriculas = [];
 let idAtual = 1;
 
-// Listar as matrículas
+// Função para listar as matrículas
 function listarMatriculas() {
   return matriculas;
 }
 
-// Buscar matrícula por ID
+// Função para buscar uma matrícula por ID
 function buscarMatriculaPorId(id) {
-  return matriculas.find(m => m.id === id);
+  return matriculas.find(m => m.id === Number(id)); // Retorna a matrícula com o ID correspondente
 }
 
-// Adicionar matrícula
+// Função para adicionar uma matrícula
 function adicionarMatricula(matricula) {
   matricula.id = idAtual++;
   matriculas.push(matricula);
   return matricula;
 }
 
-// Atualizar matrícula
+// Função para atualizar uma matrícula existente
 function atualizarMatricula(id, dadosAtualizados) {
-  const index = matriculas.findIndex(m => m.id === id);
+  const index = matriculas.findIndex(m => m.id === Number(id)); // Procura o índice da matrícula com o ID correspondente
   if (index !== -1) {
     matriculas[index] = { ...matriculas[index], ...dadosAtualizados };
     return matriculas[index];
@@ -28,11 +28,11 @@ function atualizarMatricula(id, dadosAtualizados) {
   return null;
 }
 
-// Remover matrícula
+// Função para remover uma matrícula
 function removerMatricula(id) {
-  const index = matriculas.findIndex(m => m.id === id);
+  const index = matriculas.findIndex(m => m.id === Number(id));
   if (index !== -1) {
-    const removido = matriculas.splice(index, 1);
+    const removido = matriculas.splice(index, 1); // Remove a matrícula usando splice e retorna o elemento removido
     return removido[0];
   }
   return null;

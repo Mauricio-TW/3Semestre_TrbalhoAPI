@@ -1,6 +1,6 @@
 const alunoService = require('../services/alunoService');
 
-// Lista alunos cadastrados
+//// Função assíncrona para listar alunos
 async function listar(req, res, next) {
   try {
     const alunos = await alunoService.listarTodos();
@@ -10,18 +10,18 @@ async function listar(req, res, next) {
   }
 }
 
-// Busca aluno pelo ID
+// Função assíncrona para buscar aluno por ID
 async function buscarPorId(req, res, next) {
   try {
     const id = parseInt(req.params.id);
-    const aluno = await alunoService.buscarPorId(id);
+    const aluno = await alunoService.buscarPorId(id); // await pausa a execução até que listarTodos() retorne os dados
     res.json(aluno);
   } catch (error) {
     next(error);
   }
 }
 
-// Cria novo aluno
+// Função assíncrona para criar um novo aluno
 async function criar(req, res, next) {
   try {
     const dados = req.body;
@@ -32,7 +32,7 @@ async function criar(req, res, next) {
   }
 }
 
-// Atualiza dados do aluno existente
+// Função assíncrona para atualizar aluno existente
 async function atualizar(req, res, next) {
   try {
     const id = parseInt(req.params.id);
@@ -44,7 +44,7 @@ async function atualizar(req, res, next) {
   }
 }
 
-// Remove um aluno pelo ID
+// Função assíncrona para deletar aluno pelo ID
 async function deletar(req, res, next) {
   try {
     const id = parseInt(req.params.id);
